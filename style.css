@@ -1,0 +1,176 @@
+* {
+  margin: 0;
+  padding: 0;
+  --height:60px;
+  /* box-sizing: border-box;   */
+}
+
+.logo {
+  color: white;
+  font-size: 2rem;
+  font-family: "Roboto", sans-serif;
+  cursor: pointer;
+  width: fit-content;
+  width: 12rem;
+}
+
+body{
+  height: 100vh;
+  background-image: url("./public/Assets/img1.jpg");
+  background-color: #55d6aa;
+  background-size: cover;
+  overflow: hidden;
+  background-position: center;
+}
+
+li{
+  list-style-type: none;
+  text-decoration: none;
+}
+
+a{
+  font-family: "Roboto", sans-serif;  
+  font-size: 1rem;
+  color: #edf0f1;
+  text-decoration: none;
+  transition: all 0.5s ease 0s; 
+}
+
+a:hover{
+  color: #ea1538;
+}
+
+header{
+  position: relative;
+  padding: 0 2rem;
+}
+
+.navbar{
+  width: 90%;
+  max-width: 1200px;  
+  height: var(--height);
+  margin:1rem auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between ;  
+  position:relative;
+}
+
+.navbar a{
+  font-size: 1.5rem;
+  font-weight: bold;  
+}
+
+.navbar ul{
+  display: flex;
+  justify-content: space-between;
+  gap: 2rem;
+}
+
+
+.toggle_btn{
+  color: #ffffff;
+  font-size: 1.5rem;
+  cursor: pointer;
+  display: none;
+}
+
+.action_btn {
+  font-family: "Courgette", cursive;
+  font-size: 1.5rem;
+  color: white;
+  padding: 0.1rem 0.8rem;  
+  /* margin: 1rem; */
+  border: 1px solid #ffffff;
+  background-color: transparent;
+  border-radius: 1rem;
+  transition: all 0.5s ease 0s;
+  cursor: pointer;
+}
+
+.action_btn:hover{
+  /* color: #ea1538;
+  border-color:  #ea1538; */
+  background-color: orange;
+  scale: 1.1;
+}
+
+.action_btn:active{
+  scale:.95;
+}
+
+
+/* Drop down Menu */
+.dropdown_menu{
+  position: absolute;
+  right:2rem;
+  top: 3rem;
+  /* width: 5rem; */
+  height: 0;
+  background: rgba(255, 255,255, .1);
+  border-radius: 10%;
+  backdrop-filter: blur(15px);  
+  overflow: hidden;  
+  display: none;
+  transition:height .5s cubic-bezier(0.19, 1, 0.22, 1);
+}
+
+.dropdown_menu.open{
+  height:16rem;
+}
+
+
+.dropdown_menu li{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: .5rem;    
+}
+
+
+.dropdown_menu a{  
+  font-size: 1.5rem;
+  font-family: "Courgette", cursive;
+}
+
+/* Hero section */
+section.hero{
+  height: calc(100vh - var(--height));  
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+  color: white;
+}
+
+.hero h1{
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+
+
+/* Responsive Design */
+@media (max-width:768px) {
+  .navbar a,
+  .navbar .action_btn{   
+    display: none;    
+  }
+
+  .navbar .toggle_btn{
+    display: block;
+  }
+  
+  .dropdown_menu{
+    display: block;
+  }
+
+}
+
+@media (max-width:576px) {
+.dropdown_menu{
+  left: 2rem;
+  width: unset;
+}
+}
